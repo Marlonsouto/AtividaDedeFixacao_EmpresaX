@@ -1,6 +1,6 @@
 package model.interfaces;
 
-public interface ContratoCltInterface extends ContratoFuncionario{
+public interface ContratoClt extends ContratoFuncionario {
     Double calcularDecimoTerceiro();
 
 }

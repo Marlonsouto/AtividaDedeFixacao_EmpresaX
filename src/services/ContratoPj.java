@@ -1,21 +1,23 @@
 package services;
 
+import model.Enuns.NivelExperienciaEnum;
+import model.Enuns.TipoContratacao;
 import model.abstractClass.Contrato;
 import model.abstractClass.Colaborador;
-import model.interfaces.ContratoPjINterface;
 
-public class ContratoPj extends Contrato implements ContratoPjINterface {
+import java.time.LocalDate;
 
-    private Colaborador colaborador;
+public class ContratoPj extends Contrato implements model.interfaces.ContratoPj {
 
-    @Override
-    public double calcularSalario(Colaborador colaborador) {
-        return colaborador.getSalarioBruto();
+    public ContratoPj(Long numeroMatriculaDoFuncionario, LocalDate dataContratacao, NivelExperienciaEnum nivelExperiencia, Colaborador colaborador, TipoContratacao contratacao) {
+        super(numeroMatriculaDoFuncionario, dataContratacao, nivelExperiencia, colaborador, contratacao);
     }
-
 
     @Override
     public Double calcularSalario() {
-        return null;
+        return getColaborador().getSalarioBruto();
     }
+
 }
+
+

@@ -6,7 +6,6 @@ import java.util.Objects;
 
 public abstract class Colaborador {
     private String nome;
-
     private char gerero;
     private Integer cpf;
     private Double salarioBruto;

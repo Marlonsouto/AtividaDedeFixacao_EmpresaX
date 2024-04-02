@@ -1,18 +1,22 @@
 package services;
 
+import model.Enuns.NivelExperienciaEnum;
+import model.Enuns.TipoContratacao;
+import model.abstractClass.Colaborador;
 import model.abstractClass.Contrato;
-import model.interfaces.ContratoCltInterface;
 
-public class ContratoClt extends Contrato implements ContratoCltInterface {
+import java.time.LocalDate;
 
-    //private double valeAlimentacao;
+public class ContratoClt extends Contrato implements model.interfaces.ContratoClt {
+
+
     private double valeTransporte;
 
-    //private double descontos;
+    public ContratoClt(Long numeroMatriculaDoFuncionario, LocalDate dataContratacao, NivelExperienciaEnum nivelExperiencia, Colaborador colaborador, TipoContratacao contratacao) {
+        super(numeroMatriculaDoFuncionario, dataContratacao, nivelExperiencia, colaborador, contratacao);
+    }
 
-
-
-   public double calculoValeAlimentacao(){
+    public double calculoValeAlimentacao(){
        double valeAlimentacao = 700.0;
        return valeAlimentacao * 0.1 ;
     }
